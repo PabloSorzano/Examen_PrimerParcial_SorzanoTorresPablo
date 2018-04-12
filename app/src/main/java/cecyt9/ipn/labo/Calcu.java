@@ -13,9 +13,7 @@ public class Calcu extends AppCompatActivity {
     String operador;
     double pts = 0, num1 = 0, num2 = 0;
     double result = 0;
-    String usr = getIntent().getStringExtra("usr"),
-    pass = getIntent().getStringExtra("pass"),
-    email = getIntent().getStringExtra("email");
+    String usr, pass, email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +30,12 @@ public class Calcu extends AppCompatActivity {
         cero = (Button) findViewById(R.id.cero);
         punto = (Button) findViewById(R.id.punto);
         igual = (Button) findViewById(R.id.igual);
-        mail = (Button)findViewById(R.id.email);
+        mail = (Button)findViewById(R.id.mail);
         texto = (EditText) findViewById(R.id.texto);
+
+        usr = getIntent().getStringExtra("usr");
+                pass = getIntent().getStringExtra("pass");
+                email = getIntent().getStringExtra("email");
     }
 
     public void onClickUno(View view) {
