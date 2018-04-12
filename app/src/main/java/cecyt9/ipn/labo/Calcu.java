@@ -142,8 +142,9 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickEnviar(View view){
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","correo@gmail.com", null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Android APP - ");
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",email, null));
+        emailIntent.putExtra(Intent.EXTRA_TITLE, "Android APP");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Usuario: "+ usr + "\n" +"Contraseña: "+ pass + "\n" +"Resultado: "+ result);
         startActivity(Intent.createChooser(emailIntent, email));
     }
 }
