@@ -24,12 +24,13 @@ public class LaboActivity extends AppCompatActivity {
     public void evalua(View view){
         if(usr.getText().toString().trim().equals("Playbol")
                 &&pass.getText().toString().trim().equals("123")){
-            Intent intent = new Intent(LaboActivity.this, Calcu.class);
+            Toast.makeText(this,"Datos correctos",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, Calcu.class);
             intent.putExtra("usr", usr.getText().toString().trim());
             intent.putExtra("pass", pass.getText().toString().trim());
             intent.putExtra("email", email.getText().toString().trim());
-            finish();
             startActivity(intent);
+            finish();
         }else{
             Toast.makeText(this,"Datos incorrectos",Toast.LENGTH_SHORT).show();
             usr.setText("");

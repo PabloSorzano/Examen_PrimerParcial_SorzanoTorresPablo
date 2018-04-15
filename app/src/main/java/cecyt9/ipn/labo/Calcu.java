@@ -34,8 +34,8 @@ public class Calcu extends AppCompatActivity {
         texto = (EditText) findViewById(R.id.texto);
 
         usr = getIntent().getStringExtra("usr");
-                pass = getIntent().getStringExtra("pass");
-                email = getIntent().getStringExtra("email");
+        pass = getIntent().getStringExtra("pass");
+        email = getIntent().getStringExtra("email");
     }
 
     public void onClickUno(View view) {
@@ -87,43 +87,70 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickMas(View view) {
-            guardaUno(view);
-            operador = "+";
+        operador = "+";
+        guardaUno(view);
+
 
     }
 
     public void onClickMenos(View view) {
-            guardaUno(view);
-            operador = "-";
+        operador = "-";
+        guardaUno(view);
+
 
     }
 
     public void onClickPor(View view) {
-            guardaUno(view);
-            operador = "*";
+        operador = "*";
+        guardaUno(view);
+
 
     }
 
     public void onClickEntre(View view) {
-            guardaUno(view);
-            operador = "/";
+        operador = "/";
+        guardaUno(view);
+
+
+    }
+
+    public void onClickRaiz(View view) {
+        operador = "√x";
+        guardaUno(view);
+
+    }
+
+    public void onClickPotencia(View view) {
+        operador = "^";
+        guardaUno(view);
 
     }
 
     public void guardaUno(View view) {
-        num1 = Double.parseDouble(texto.getText().toString());
-        texto.setText("");
+        if(operador=="√x"){
+            num1 = Double.parseDouble(texto.getText().toString());
+            result = Math.sqrt(num1);
+            texto.setText(String.valueOf(result));
+        }else{
+            num1 = Double.parseDouble(texto.getText().toString());
+            texto.setText("");
+        }
     }
 
     public void onClickCE(View view){
         texto.setText("");
         num1 = 0;
         num2 = 0;
+        operador="";
     }
 
     public void onClickIgual(View view) {
-        num2 = Double.parseDouble(texto.getText().toString());
 
+        if( texto.getText().toString().isEmpty() || operador.isEmpty()){
+            Toast.makeText(this,"Realize una operación",Toast.LENGTH_SHORT).show();
+        }else {
+            num2 = Double.parseDouble(texto.getText().toString());
+            System.out.println(num2);
             switch (operador) {
                 case "+":
                     result = num1 + num2;
@@ -137,16 +164,29 @@ public class Calcu extends AppCompatActivity {
                 case "/":
                     result = num1 / num2;
                     break;
-                default:break;
+                case "^":
+                    result = Math.pow(num1,num2);
+                    break;
+                case "":
+                    break;
+                default:
+                    break;
             }
             texto.setText(String.valueOf(result));
+        }
+
 
     }
 
     public void onClickEnviar(View view){
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",email, null));
-        emailIntent.putExtra(Intent.EXTRA_TITLE, "Android APP");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Usuario: "+ usr + "\n" +"Contraseña: "+ pass + "\n" +"Resultado: "+ result);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Usuario: "+usr+"\n"+"Contraseña: "+pass+"\n"+"Resultado: "+texto.getText());
         startActivity(Intent.createChooser(emailIntent, email));
+    }
+
+    public void onClickVisitar(View view){
+        //Intent batiz = new Intent(this, Maps.class);
+        finish();
+        //startActivity(batiz);
     }
 }

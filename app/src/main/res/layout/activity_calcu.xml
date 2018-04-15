@@ -181,23 +181,50 @@
         app:layout_constraintTop_toBottomOf="@+id/menos" />
 
     <Button
+        android:id="@+id/raiz"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickRaiz"
+        android:text="√x"
+        app:layout_constraintStart_toStartOf="@+id/por"
+        app:layout_constraintTop_toBottomOf="@+id/por" />
+
+    <Button
+        android:id="@+id/potencia"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPotencia"
+        android:text="^"
+        app:layout_constraintStart_toEndOf="@+id/raiz"
+        app:layout_constraintTop_toBottomOf="@+id/entre" />
+
+    <Button
         android:id="@+id/igual"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIgual"
         android:text="="
         app:layout_constraintStart_toStartOf="@+id/por"
-        app:layout_constraintTop_toBottomOf="@+id/por" />
+        app:layout_constraintTop_toBottomOf="@+id/raiz" />
 
     <Button
         android:id="@+id/mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:onClick="onClickEnviar"
         android:text="ENVIAR A CORREO"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/punto"
-        app:layout_constraintTop_toBottomOf="@+id/igual" />
+        app:layout_constraintStart_toStartOf="@+id/cero"
+        app:layout_constraintTop_toBottomOf="@+id/punto" />
+
+    <Button
+        android:id="@+id/batiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickVisitar"
+        android:text="VISITAR EL CECYT9"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/mail"
+        app:layout_constraintTop_toBottomOf="@+id/mail" />
 </android.support.constraint.ConstraintLayout>
