@@ -127,7 +127,7 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void guardaUno(View view) {
-        if(operador=="√x"){
+        if(operador.equals("√x")){
             num1 = Double.parseDouble(texto.getText().toString());
             result = Math.sqrt(num1);
             texto.setText(String.valueOf(result));
@@ -185,8 +185,8 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickVisitar(View view){
-        //Intent batiz = new Intent(this, Maps.class);
+        Intent batiz = new Intent(this, Maps.class);
         finish();
-        //startActivity(batiz);
+        startActivity(batiz);
     }
 }
