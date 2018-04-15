@@ -82,7 +82,6 @@ public class Calcu extends AppCompatActivity {
         if (pts == 0) {
             texto.append(".");
             pts++;
-        } else {
         }
     }
 
@@ -185,7 +184,7 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickVisitar(View view){
-        Intent batiz = new Intent(this, Maps.class);
+        Intent batiz = new Intent(this, MapsActivity.class);
         finish();
         startActivity(batiz);
     }
