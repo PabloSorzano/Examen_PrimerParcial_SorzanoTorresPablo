@@ -184,8 +184,13 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickVisitar(View view){
-        Intent batiz = new Intent(this, MapsActivity.class);
+        //Intent batiz = new Intent(this, MapsActivity.class);
+        //finish();
+        //startActivity(batiz);
+        Uri ubicacion = Uri.parse("google.streetview_cb11=19.6622628,-99.2201554");
+        Intent mapa = new Intent("cecyt9.ipn.labo",ubicacion);
+        mapa.setPackage("cecyt9.ipn.labo");
         finish();
-        startActivity(batiz);
+        startActivity(mapa);
     }
 }
