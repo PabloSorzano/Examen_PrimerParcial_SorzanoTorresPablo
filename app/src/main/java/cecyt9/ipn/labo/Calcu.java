@@ -184,8 +184,18 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickVisitar(View view){
-        Intent batiz = new Intent(this, MapsActivity.class);
-        finish();
-        startActivity(batiz);
+        Uri gmmIntentUri = Uri.parse("geo:19.6622628,-99.2201554");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+        // Displays an image of the Swiss Alps
+        //Uri gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988");
+        //Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        //mapIntent.setPackage("com.google.android.apps.maps");
+        //startActivity(mapIntent);
+
+
     }
 }
