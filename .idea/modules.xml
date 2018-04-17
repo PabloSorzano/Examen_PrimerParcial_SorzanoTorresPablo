@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Examen_PrimerParcial_SorzanoTorresPablo.iml" filepath="$PROJECT_DIR$/Examen_PrimerParcial_SorzanoTorresPablo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Alumno\AndroidStudioProjects\Examen_PrimerParcial_SorzanoTorresPablo\app\app.iml" filepath="C:\Users\Alumno\AndroidStudioProjects\Examen_PrimerParcial_SorzanoTorresPablo\app\app.iml" />
     </modules>
   </component>
 </project>
