@@ -184,7 +184,7 @@ public class Calcu extends AppCompatActivity {
     }
 
     public void onClickVisitar(View view){
-        Uri gmmIntentUri = Uri.parse("geo:19.6622628,-99.2201554");
+        Uri gmmIntentUri = Uri.parse("google.streetview:cbll=19.453962497987657,-99.17502969503403");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         if (mapIntent.resolveActivity(getPackageManager()) != null) {
